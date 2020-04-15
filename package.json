@@ -18,11 +18,11 @@
     "typescript": "~3.7.2"
   },
   "scripts": {
-    "start": "prettier --check 'src/**/*.{js,ts,tsx,json,css}' && eslint 'src/**/*.{js,ts,tsx}' --max-warnings 0 && react-scripts start",
-    "build": "prettier --check 'src/**/*.{js,ts,tsx,json,css}' && eslint 'src/**/*.{js,ts,tsx}' --max-warnings 0 && react-scripts build",
+    "start": "prettier --check './**/*.{js,ts,tsx,json,css}' && eslint './**/*.{js,ts,tsx}' --max-warnings 0 && react-scripts start",
+    "build": "prettier --check './**/*.{js,ts,tsx,json,css} && eslint './**/*.{js,ts,tsx}' --max-warnings 0 && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "prettier --check 'src/**/*.{js,ts,tsx,json,css}' && eslint 'src/**/*.{js,ts,tsx}'"
+    "lint": "prettier --check './**/*.{js,ts,tsx,json,css}' && eslint './**/*.{js,ts,tsx}'"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -57,8 +57,10 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{js,ts,tsx}": [
-      "prettier --check",
+    "./**/*.{js,ts,tsx,json,css}": [
+      "prettier --check"
+    ],
+    "./**/*.{js,ts,tsx}": [
       "eslint --max-warnings 0"
     ]
   }
